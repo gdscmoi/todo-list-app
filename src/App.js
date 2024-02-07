@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+const myName = "mwema";
+
+const todoItems = [
+  { title: "learn react", isDone: true },
+  { title: "go shopping", isDone: false },
+  { title: "learn html", isDone: false },
+  { title: "do styling", isDone: false },
+];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{padding: '1rem', background: 'grey'}}>
+      <h1>{myName}'s Todo list</h1>
+      <div style={{padding: '1rem'}}>
+        {todoItems.map((item) => (
+          <>{item.isDone == false && <p>{item.title}</p>}</>
+        ))}
+      </div>
     </div>
   );
 }
